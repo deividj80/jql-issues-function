@@ -1,0 +1,20 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="jql-issues-function"/>
+
+    <jql-function key="role-members" i18n-name-key="rolefunc.name" name="JQL Issues Function"
+                  class="com.deivid.jira.plugins.JqlIssuesFunction">
+        <description key="rolefunc.description">JQL function to return the issues</description>
+        <fname>jqlIssues</fname>
+        <list>true</list>
+    </jql-function>
+
+</atlassian-plugin>
